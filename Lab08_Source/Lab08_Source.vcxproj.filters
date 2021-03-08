@@ -18,9 +18,17 @@
     <ClCompile Include="Lab08.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Lab08Utility.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
     <Text Include="input1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Lab08Utility.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
