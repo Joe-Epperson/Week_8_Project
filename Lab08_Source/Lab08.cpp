@@ -11,7 +11,7 @@
 #include "Lab08Utility.h"
 using namespace std;
 
-
+// Structure for the final values
 struct Totals
 {
 	double Total;
@@ -30,7 +30,11 @@ int main()
 	Totals DVD;
 	Totals MUSIC;
 	Totals TV;
+
+	// Getting the values from the input file and storing them in their specified vectors
 	GetFile(DVDPrices, MUSICPrices, TVPrices);
+
+	// Using if-else statements to determine whether or not to perform a calculation for total, median, and mean
 	if (DVDPrices.size() > 0)
 	{
 		DVD.Total = GetTotal(DVDPrices);
@@ -43,6 +47,7 @@ int main()
 		DVD.errorMedian = "nan";
 		DVD.errorMean = "nan";
 	}
+
 	if (MUSICPrices.size() > 0)
 	{
 		MUSIC.Total = GetTotal(MUSICPrices);
@@ -55,6 +60,7 @@ int main()
 		MUSIC.errorMedian = "nan";
 		MUSIC.errorMean = "nan";
 	}
+
 	if (TVPrices.size() > 0)
 	{
 		TV.Total = GetTotal(TVPrices);
@@ -71,6 +77,7 @@ int main()
 	ofstream outputFile;
 
 	outputFile.open("output.txt");
+	// Using if-else statements to determine what value to output to the output file
 	if (DVDPrices.size() > 0)
 	{
 		outputFile << left << setw(9) << "DVD" << left << setw(9) << DVD.Total << left << setw(9) << DVD.Median << left << setw(9) << DVD.Mean << endl;
@@ -79,6 +86,7 @@ int main()
 	{
 		outputFile << left << setw(9) << "DVD" << left << setw(9) << DVD.errorTotal << left << setw(9) << DVD.errorMedian << left << setw(9) << DVD.errorMean << endl;
 	}
+
 	if (MUSICPrices.size() > 0)
 	{
 		outputFile << left << setw(9) << "MUSIC" << left << setw(9) << MUSIC.Total << left << setw(9) << MUSIC.Median << left << setw(9) << MUSIC.Mean << endl;
@@ -87,6 +95,7 @@ int main()
 	{
 		outputFile << left << setw(9) << "MUSIC" << left << setw(9) << MUSIC.errorTotal << left << setw(9) << MUSIC.errorMedian << left << setw(9) << MUSIC.errorMean << endl;
 	}
+
 	if (TVPrices.size() > 0)
 	{
 		outputFile << left << setw(9) << "TV" << left << setw(9) << TV.Total << left << setw(9) << TV.Median << left << setw(9) << TV.Mean << endl;

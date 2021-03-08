@@ -19,6 +19,7 @@ void GetFile(vector<double>& DVDPrices, vector<double>& MUSICPrices, vector<doub
 	double tempVal;
 
 	itemInputs.open("input.txt");
+
 	// Inputting the values into the correct vectors until the file has nothing more to output
 	while (!itemInputs.fail())
 	{
@@ -43,6 +44,7 @@ void GetFile(vector<double>& DVDPrices, vector<double>& MUSICPrices, vector<doub
 double GetTotal(vector<double> PriceVector)
 {
 	double totalSum = 0;
+
 	// Summing all of the values in the vector
 	for (int i = 0; i < PriceVector.size(); ++i)
 	{
@@ -56,6 +58,7 @@ double GetMedian(vector<double> PriceVector)
 	double medianVal;
 	int smallestVal;
 	double tempVal;
+
 	// Sorting the items in the vector
 	for (int i = 0; i < (PriceVector.size() - 1); ++i)
 	{
@@ -67,6 +70,8 @@ double GetMedian(vector<double> PriceVector)
 				smallestVal = j;
 			}
 		}
+
+		// Swapping the smallest value with the current value
 		tempVal = PriceVector.at(i);
 		PriceVector.at(i) = PriceVector.at(smallestVal);
 		PriceVector.at(smallestVal) = tempVal;
@@ -92,7 +97,9 @@ double GetMedian(vector<double> PriceVector)
 double GetMean(double itemTotal, vector<double> PriceVector)
 {
 	double meanVal;
+
 	// Calculating the mean value
 	meanVal = itemTotal / (PriceVector.size());
+
 	return meanVal;
 }
